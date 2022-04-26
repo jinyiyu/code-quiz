@@ -1,1 +1,96 @@
-# code-quiz
+# Code Quiz
+
+
+
+## About this Project
+
+```
+This project is developed to emable users to generate random passwords based on criteria that they’ve selected. This app will run in the browser and will feature dynamically updated HTML and CSS powered by JavaScript code. It will have a clean and polished, responsive user interface that adapts to multiple screen sizes.
+```
+
+## Links to the Project
+
+Link to the Github Repository: [https://github.com/jinyiyu/code-quiz]
+
+Link to the deployed URL: [https://jinyiyu.github.io/code-quiz/]
+
+<br>
+
+## User Story
+
+```
+AS AN employee with access to sensitive data
+I WANT to randomly generate a password that meets certain criteria
+SO THAT I can create a strong password that provides greater security
+```
+
+## Details of the steps in flowcharts
+
+### Logic diagrams
+
+1. overall logic - 
+2. function two - 
+3. function three - rander something
+4. 
+
+## Mock-Up
+
+The following screenshots in the taggle list show the web application's appearance and functionality:
+
+<details>
+<summary> Welcome banner Page</summary>
+
+![display](./assets/image/display-start.png)
+</details>
+
+<details>
+<summary> Start Take the questions with a timeer</summary>
+
+![display2](./assets/image/password-length.png)
+</details>
+
+<details>
+<summary> Complete the last question</summary>
+
+![display2](./assets/image/alert-length.png)
+</details>
+
+<details>
+<summary> Display the result</summary>
+
+![display2](./assets/image/password-characters1.png)
+![display2](./assets/image/password-characters2.png)
+![display2](./assets/image/password-characters3.png)
+![display2](./assets/image/password-characters4.png)
+</details>
+
+<details>
+<summary> Change to highscrose page to compare with other player</summary>
+
+![display2](./assets/image/alert-characters.png)
+</details>
+
+<br>
+
+## Technology Used
+
+- HTML
+- CSS
+- Javascript
+- Bootstrap
+- Web APIs
+- Github
+
+<br>
+
+## How To Contact Me
+
+- Email: yujinyiicxk@gmail.com
+- Github: https://github.com/jinyiyu
+- LinkedIn: https://www.linkedin.com/in/jinyiyu/
+
+<br>
+
+## Authored by
+
+### __Jinyi Yu__
