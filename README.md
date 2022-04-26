@@ -26,12 +26,31 @@ SO THAT I can create a strong password that provides greater security
 
 ## Details of the steps in flowcharts
 
-### Logic diagrams
+<br>
 
-1. overall logic - 
-2. function two - 
-3. function three - rander something
-4. 
+### Logic diagrams
+<br>
+
+Overall logic
+
+description and put my overall diagrams here
+
+<br>
+
+At function level
+<details>
+<summary> 1. function two - </summary>
+
+![display](./assets/image/display-start.png)
+</details>
+
+<details>
+<summary> 2. function three - rander something</summary>
+
+![display](./assets/image/display-start.png)
+</details>
+
+<br>
 
 ## Mock-Up
 
