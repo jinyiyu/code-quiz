@@ -40,7 +40,6 @@ main {
 .nav-container{
     display: flex;
     justify-content:flex-start;
-    color: ;
 }
 
 .nav-link{
@@ -58,6 +57,41 @@ main {
     text-align: center;
 }
 
-#banner{
+.welcome-section-title{
 
+}
+
+.welcome-section-info{
+
+}
+
+.start-button{}
+
+/* my question banner section */
+.question-section{
+    border: 0.3rem solid black;
+    box-shadow:0rem 0rem 0.7rem 0.7rem var(--header-and-footer-background);
+    letter-spacing: 0.3rem;
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+
+
+.answer-button{
+    width: 100%;
+}
+
+.answers{
+    list-style: none;
+    padding: 0;
+}
+
+/* my form section */
+.feedback-form-section{
+    border: 0.3rem solid black;
+    box-shadow:0rem 0rem 0.7rem 0.7rem var(--header-and-footer-background);
+    letter-spacing: 0.3rem;
+    padding: 2rem 1rem;
+    text-align: center;
 }
