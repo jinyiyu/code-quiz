@@ -1,8 +1,9 @@
 const mainSection = document.getElementById("main");
 const startContainer = document.getElementById("banner");
 const startBtn = document.getElementById("startBtn");
-const mainElement = document.getElementById("main");
+// const mainElement = document.getElementById("main");
 
+let timer = 100;
 let questionIndex = 0;
 // declear my questions and answers array
 const questions = [
@@ -59,7 +60,7 @@ const validateAnswer = (event) => {
   console.log(event.target);
   questionIndex += 1;
 
-  // if to check the last question or not
+  // if statement to check the last question or not
   removeQuestionSection();
   renderQuestionSection();
 };
@@ -115,10 +116,31 @@ const renderQuestionSection = () => {
   questionSection.addEventListener("click", validateAnswer);
 };
 
+const renderTimerSection = () => {
+  const timerSpanSection = document.createElement("section");
+  timerSpanSection.setAttribute("id", "timerSpanSection");
+  timerSpanSection.textContent = "Timer: ";
+  const timerSpan = document.createElement("span");
+  timerSpan.setAttribute("id", "timerSpan");
+  timerSpan.textContent = 0;
+  timerSpanSection.append(timerSpan);
+  mainSection.append(timerSpanSection);
+};
+
+const startTimer = () => {
+  timer -= 1;
+  const timerSpan = document.getElementById("timerSpan");
+  timerSpan.textContent = timer;
+};
+
 const startQuiz = () => {
   removeStartSection();
-  // start timer
-  // render timer section
+
+  // render timerSection and starts the time counting down from 100 second
+  renderTimerSection();
+  const timerId = setInterval(startTimer, 1000);
+  // console.log(timerId);
+
   // render question function
   renderQuestionSection();
 };
