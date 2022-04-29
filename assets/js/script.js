@@ -56,13 +56,53 @@ const questions = [
   },
 ];
 
+const renderCorrectAnswerAlarm = () => {
+  const alertSection = document.createElement("section");
+  alertSection.setAttribute("class", "correctAnswerAlarm");
+  alertSection.textContent = "You're correct! Keep going!";
+  mainSection.append(alertSection);
+};
+
+const renderWrongAnswerAlarm = () => {
+  const alertSection = document.createElement("section");
+  alertSection.setAttribute("class", "wrongAnswerAlarm");
+  alertSection.textContent = "Oops, be careful! You have less time now..";
+  mainSection.append(alertSection);
+};
+
 const validateAnswer = (event) => {
-  console.log(event.target);
-  questionIndex += 1;
+  //get the target clicking event for user's answer
+  const target = event.target;
+  const userAnswer = target.getAttribute("data-value");
+  console.log(userAnswer);
+
+  // get the correct answer for each question
+  const rightAnswer = questions[questionIndex].correctAnswer;
+  console.log(rightAnswer);
+
+  //compare the 2 answers - correct(if),incorrect(else)
+  if (userAnswer === rightAnswer) {
+    // render success alert with message and status
+    renderCorrectAnswerAlarm();
+    // set timeout for 500ms and then go to next question
+    // setTimeout(startTimer, 5000); ??????
+  } else {
+    // subtract 5 seconds from timerValue
+    timer -= 5;
+    // render error alert with message and status
+    renderWrongAnswerAlarm();
+  }
 
   // if statement to check the last question or not
-  removeQuestionSection();
-  renderQuestionSection();
+  if (questionIndex >= 8) {
+    // set quizComplete to true and then render form and stop the timer
+    // console.log("stoptimer!!"); ???
+    removeQuestionSection();
+  } else {
+    questionIndex += 1;
+    removeQuestionSection();
+    renderQuestionSection();
+  }
 };
 
 const removeStartSection = () => {
@@ -101,6 +141,7 @@ const renderQuestionSection = () => {
     const li = document.createElement("li");
     const btn = document.createElement("button");
     btn.setAttribute("class", "answer-button");
+    btn.setAttribute("data-value", answer);
     btn.textContent = answer;
     li.append(btn);
     ul.append(li);
@@ -125,12 +166,19 @@ const renderTimerSection = () => {
   timerSpan.textContent = 0;
   timerSpanSection.append(timerSpan);
   mainSection.append(timerSpanSection);
-};
 
-const startTimer = () => {
-  timer -= 1;
-  const timerSpan = document.getElementById("timerSpan");
-  timerSpan.textContent = timer;
+  const startTimer = () => {
+    timer -= 1;
+    const timerSpan = document.getElementById("timerSpan");
+    timerSpan.textContent = timer;
+    if (timer === 0) {
+      clearInterval(timerId);
+    }
+  };
+
+  //start the timer coountdown
+  const timerId = setInterval(startTimer, 1000);
+  // console.log(timerId);
 };
 
 const startQuiz = () => {
@@ -138,8 +186,6 @@ const startQuiz = () => {
 
   // render timerSection and starts the time counting down from 100 second
   renderTimerSection();
-  const timerId = setInterval(startTimer, 1000);
-  // console.log(timerId);
 
   // render question function
   renderQuestionSection();
