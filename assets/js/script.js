@@ -56,17 +56,14 @@ const questions = [
   },
 ];
 
-const renderCorrectAnswerAlarm = () => {
+const renderAnswerAlarm = (message) => {
+  if (document.getElementById("answerAlarm")) {
+    document.getElementById("answerAlarm").remove();
+  }
   const alertSection = document.createElement("section");
   alertSection.setAttribute("class", "correctAnswerAlarm");
-  alertSection.textContent = "You're correct! Keep going!";
-  mainSection.append(alertSection);
-};
-
-const renderWrongAnswerAlarm = () => {
-  const alertSection = document.createElement("section");
-  alertSection.setAttribute("class", "wrongAnswerAlarm");
-  alertSection.textContent = "Oops, be careful! You have less time now..";
+  alertSection.setAttribute("id", "answerAlarm");
+  alertSection.textContent = message;
   mainSection.append(alertSection);
 };
 
@@ -80,28 +77,40 @@ const validateAnswer = (event) => {
   const rightAnswer = questions[questionIndex].correctAnswer;
   console.log(rightAnswer);
 
+  // store the users answer in an array
+
   //compare the 2 answers - correct(if),incorrect(else)
   if (userAnswer === rightAnswer) {
     // render success alert with message and status
-    renderCorrectAnswerAlarm();
+    renderAnswerAlarm("You're correct! Keep going!");
+
     // set timeout for 500ms and then go to next question
-    // setTimeout(startTimer, 5000); ??????
   } else {
     // subtract 5 seconds from timerValue
     timer -= 5;
     // render error alert with message and status
-    renderWrongAnswerAlarm();
+    renderAnswerAlarm("Oops, be careful! You have less time now...");
   }
 
+  const clearAlarm = () => {
+    if (document.getElementById("answerAlarm")) {
+      document.getElementById("answerAlarm").remove();
+    }
+    clearTimeout(alarmTimer);
+  };
+
+  const alarmTimer = setTimeout(clearAlarm, 1000);
+
   // if statement to check the last question or not
-  if (questionIndex >= 8) {
-    // set quizComplete to true and then render form and stop the timer
-    // console.log("stoptimer!!"); ???
-    removeQuestionSection();
-  } else {
+  if (questionIndex < questions.length - 1) {
     questionIndex += 1;
     removeQuestionSection();
     renderQuestionSection();
+  } else {
+    // set quizComplete to true and then render form and stop the timer
+    // console.log("stoptimer!!");
+    questionIndex += 1;
+    removeQuestionSection();
   }
 };
 
@@ -163,7 +172,7 @@ const renderTimerSection = () => {
   timerSpanSection.textContent = "Timer: ";
   const timerSpan = document.createElement("span");
   timerSpan.setAttribute("id", "timerSpan");
-  timerSpan.textContent = 0;
+  timerSpan.textContent = timer;
   timerSpanSection.append(timerSpan);
   mainSection.append(timerSpanSection);
 
@@ -172,6 +181,10 @@ const renderTimerSection = () => {
     const timerSpan = document.getElementById("timerSpan");
     timerSpan.textContent = timer;
     if (timer === 0) {
+      //render gameover
+      clearInterval(timerId);
+    }
+    if (questionIndex === questions.length) {
       clearInterval(timerId);
     }
   };
