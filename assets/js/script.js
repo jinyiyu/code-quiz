@@ -68,49 +68,52 @@ const renderAnswerAlarm = (message) => {
 };
 
 const validateAnswer = (event) => {
-  //get the target clicking event for user's answer
   const target = event.target;
-  const userAnswer = target.getAttribute("data-value");
-  console.log(userAnswer);
 
-  // get the correct answer for each question
-  const rightAnswer = questions[questionIndex].correctAnswer;
-  console.log(rightAnswer);
+  if (target.tagName === "BUTTON") {
+    //get the target clicking event for user's answer
 
-  // store the users answer in an array
+    const userAnswer = target.getAttribute("data-value");
+    console.log(userAnswer);
 
-  //compare the 2 answers - correct(if),incorrect(else)
-  if (userAnswer === rightAnswer) {
-    // render success alert with message and status
-    renderAnswerAlarm("You're correct! Keep going!");
+    // get the correct answer for each question
+    const rightAnswer = questions[questionIndex].correctAnswer;
+    console.log(rightAnswer);
 
-    // set timeout for 500ms and then go to next question
-  } else {
-    // subtract 5 seconds from timerValue
-    timer -= 5;
-    // render error alert with message and status
-    renderAnswerAlarm("Oops, be careful! You have less time now...");
-  }
+    // store the users answer in an array
 
-  const clearAlarm = () => {
-    if (document.getElementById("answerAlarm")) {
-      document.getElementById("answerAlarm").remove();
+    //compare the 2 answers - correct(if),incorrect(else)
+    if (userAnswer === rightAnswer) {
+      // render success alert with message and status
+      renderAnswerAlarm("You're correct! Keep going!");
+
+      // set timeout for 500ms and then go to next question
+    } else {
+      // subtract 5 seconds from timerValue
+      timer -= 5;
+      // render error alert with message and status
+      renderAnswerAlarm("Oops, be careful! You have less time now...");
     }
-    clearTimeout(alarmTimer);
-  };
 
-  const alarmTimer = setTimeout(clearAlarm, 1000);
+    // if statement to check the last question or not
+    if (questionIndex < questions.length - 1) {
+      questionIndex += 1;
+      removeQuestionSection();
+      renderQuestionSection();
+    } else {
+      // set quizComplete to true and then render form and stop the timer
+      // console.log("stoptimer!!");
+      questionIndex += 1;
+      removeQuestionSection();
+    }
+    const clearAlarm = () => {
+      if (document.getElementById("answerAlarm")) {
+        document.getElementById("answerAlarm").remove();
+      }
+      clearTimeout(alarmTimer);
+    };
 
-  // if statement to check the last question or not
-  if (questionIndex < questions.length - 1) {
-    questionIndex += 1;
-    removeQuestionSection();
-    renderQuestionSection();
-  } else {
-    // set quizComplete to true and then render form and stop the timer
-    // console.log("stoptimer!!");
-    questionIndex += 1;
-    removeQuestionSection();
+    const alarmTimer = setTimeout(clearAlarm, 1500);
   }
 };
 
