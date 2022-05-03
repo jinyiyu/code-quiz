@@ -1,97 +1,102 @@
-:root{
-    --header-and-footer-background: rgb(245, 182, 192);
-    --body-background: rgb(217, 210, 210);
+:root {
+  --header-and-footer-background: rgb(245, 182, 192);
+  --body-background: rgb(217, 210, 210);
 }
 
-*{
-    box-sizing: border-box;
+* {
+  box-sizing: border-box;
 }
 
 html {
-    font-size: 10px;
+  font-size: 10px;
 }
 
 body {
-    font-size: 1.6rem;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    line-height: 2;
-    margin: 0;
-    background-color:var(--body-background);
-}
-
-main{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-/* my header with nav bar sticked on top */
-.header{
-    background-color: var(--header-and-footer-background);
+  font-size: 1.6rem;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  line-height: 2;
+  margin: 0;
+  background-color: var(--body-background);
 }
 
 main {
-    flex: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.nav-container{
-    display: flex;
-    justify-content:flex-start;
+/* my header with nav bar sticked on top */
+.header {
+  background-color: var(--header-and-footer-background);
 }
 
-.nav-link{
-    text-decoration: none;
-    font-size: 2rem;
-    padding:1rem 2rem 1rem 2rem;
+main {
+  flex: 2;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.nav-link {
+  text-decoration: none;
+  font-size: 2rem;
+  padding: 1rem 2rem 1rem 2rem;
 }
 
 /* my welcome banner section */
-.welcome-section{
-    border: 0.3rem solid black;
-    box-shadow:0rem 0rem 0.7rem 0.7rem var(--header-and-footer-background);
-    letter-spacing: 0.3rem;
-    padding: 2rem 1rem;
-    text-align: center;
+.welcome-section {
+  border: 0.3rem solid black;
+  box-shadow: 0rem 0rem 0.7rem 0.7rem var(--header-and-footer-background);
+  letter-spacing: 0.3rem;
+  padding: 2rem 1rem;
+  text-align: center;
 }
 
-.welcome-section-title{
-
+.welcome-section-title {
 }
 
-.welcome-section-info{
-
+.welcome-section-info {
 }
 
-.start-button{}
+.start-button {
+}
 
 /* my question banner section */
-.question-section{
-    border: 0.3rem solid black;
-    box-shadow:0rem 0rem 0.7rem 0.7rem var(--header-and-footer-background);
-    letter-spacing: 0.3rem;
-    padding: 2rem 1rem;
-    text-align: center;
+.question-section {
+  border: 0.3rem solid black;
+  box-shadow: 0rem 0rem 0.7rem 0.7rem var(--header-and-footer-background);
+  letter-spacing: 0.3rem;
+  padding: 2rem 1rem;
+  text-align: center;
 }
 
-
-
-.answer-button{
-    width: 100%;
+.answer-button {
+  width: 100%;
 }
 
-.answers{
-    list-style: none;
-    padding: 0;
+.answers {
+  list-style: none;
+  padding: 0;
 }
 
 /* my form section */
-.feedback-form-section{
-    border: 0.3rem solid black;
-    box-shadow:0rem 0rem 0.7rem 0.7rem var(--header-and-footer-background);
-    letter-spacing: 0.3rem;
-    padding: 2rem 1rem;
-    text-align: center;
+.feedback-form-section {
+  border: 0.3rem solid black;
+  box-shadow: 0rem 0rem 0.7rem 0.7rem var(--header-and-footer-background);
+  letter-spacing: 0.3rem;
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+.thankyou-section {
+  border: 0.3rem solid black;
+  box-shadow: 0rem 0rem 0.7rem 0.7rem var(--header-and-footer-background);
+  letter-spacing: 0.3rem;
+  padding: 2rem 1rem;
+  text-align: center;
 }

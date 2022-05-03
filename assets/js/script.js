@@ -56,6 +56,12 @@ const questions = [
   },
 ];
 
+const onLoad = () => {
+  // initialise local storage
+  // check if highscores exists in LS
+  // if false then set highscores to empty array in LS
+};
+
 const renderAnswerAlarm = (message) => {
   if (document.getElementById("answerAlarm")) {
     document.getElementById("answerAlarm").remove();
@@ -65,6 +71,77 @@ const renderAnswerAlarm = (message) => {
   alertSection.setAttribute("id", "answerAlarm");
   alertSection.textContent = message;
   mainSection.append(alertSection);
+};
+
+const renderThankYouBanner = () => {
+  // // creat section element
+  const thankyouSection = document.createElement("section");
+  thankyouSection.setAttribute("class", "thankyou-section");
+  thankyouSection.setAttribute("id", "Banner");
+
+  // create h1 title
+  const h1 = document.createElement("h1");
+  h1.setAttribute("class", "thankyou-section-title");
+  h1.textContent = "Thank you for taking the quiz!";
+
+  // creat h2 info
+  const h2 = document.createElement("h2");
+  h2.setAttribute("class", "thankyou-section-info");
+  h2.textContent = "Do you want to take the quiz again?";
+
+  // creat retry and go-to-high-scores button
+  const btn1 = document.createElement("button");
+  const btn2 = document.createElement("button");
+  btn1.setAttribute("class", "retry-button");
+  btn1.setAttribute("id", "retry-button");
+  btn1.textContent = "Retry";
+  btn2.setAttribute("class", "showScores-button");
+  btn2.setAttribute("id", "showScores-button");
+  btn2.textContent = "Go to the high Scores";
+  thankyouSection.append(h1, h2, btn1, btn2);
+  mainSection.append(thankyouSection);
+
+  // add click event listener on form submit button to render Thank you banner
+  // btn1.addEventListener("click", startQuiz);
+  // btn2.addEventListener("click", renderHighScores);
+};
+
+const renderGameOver = () => {
+  // // creat section element
+  const feedbackFormSection = document.createElement("section");
+  feedbackFormSection.setAttribute("class", "feedback-form-section");
+  feedbackFormSection.setAttribute("name", "feedback-form");
+
+  // create h2 title
+  const h2 = document.createElement("h2");
+  h2.setAttribute("class", "feedback-form-title");
+  h2.textContent = "let's save your score!";
+
+  // creat h3 info
+  const h3 = document.createElement("h3");
+  h3.setAttribute("class", "feedback-form-info");
+  h3.textContent = "Your score is:100";
+
+  // creat form info
+  const form = document.createElement("form");
+  form.setAttribute("class", "feeeback-form");
+
+  // creat input form and submit button
+  const input = document.createElement("input");
+  const btn = document.createElement("button");
+  input.setAttribute("name", "full-name");
+  input.setAttribute("class", "form-input");
+  input.setAttribute("type", "text");
+  input.setAttribute("placeholder", "Enter your full name");
+  btn.setAttribute("class", "btn");
+  btn.setAttribute("type", "submit");
+  btn.textContent = "Submit";
+  form.append(input, btn);
+  feedbackFormSection.append(h2, h3, form);
+  mainSection.append(feedbackFormSection);
+
+  // add click event listener on form submit button to render Thank you banner
+  btn.addEventListener("click", renderThankYouBanner);
 };
 
 const validateAnswer = (event) => {
@@ -102,9 +179,9 @@ const validateAnswer = (event) => {
       renderQuestionSection();
     } else {
       // set quizComplete to true and then render form and stop the timer
-      // console.log("stoptimer!!");
       questionIndex += 1;
       removeQuestionSection();
+      renderGameOver();
     }
     const clearAlarm = () => {
       if (document.getElementById("answerAlarm")) {
@@ -210,5 +287,6 @@ const startQuiz = () => {
 // add event listeners
 // add document on load event listener
 // add start button click event listener
-
+window.addEventListener("load", onLoad);
+// add event listener to start button
 startBtn.addEventListener("click", startQuiz);
