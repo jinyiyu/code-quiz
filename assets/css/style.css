@@ -100,3 +100,59 @@ main {
   padding: 2rem 1rem;
   text-align: center;
 }
+
+/* my gameover section */
+.retry-button {
+  text-decoration: none;
+  width: 115px;
+  height: 25px;
+  background: var(--header-and-footer-background);
+  padding: 10px;
+  text-align: center;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+  line-height: 25px;
+  margin-right: 3rem;
+}
+
+.showScores-button {
+  text-decoration: none;
+  width: 115px;
+  height: 25px;
+  background: var(--header-and-footer-background);
+  padding: 10px;
+  text-align: center;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+  line-height: 25px;
+}
+
+/* my highscore page */
+.highscores-section {
+  border: 0.3rem solid black;
+  box-shadow: 0rem 0rem 0.7rem 0.7rem var(--header-and-footer-background);
+  letter-spacing: 0.3rem;
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+/* handle table style */
+table,
+th,
+td {
+  border: 1px solid black;
+}
+
+.table-container {
+  display: flex;
+  justify-content: center;
+}
+.table {
+  background-color: rgb(184, 182, 184);
+}
+.table-info,
+.table-title {
+  padding: 1rem 1rem;
+}
