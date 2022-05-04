@@ -56,12 +56,6 @@ const questions = [
   },
 ];
 
-const onLoad = () => {
-  // initialise local storage
-  // check if highscores exists in LS
-  // if false then set highscores to empty array in LS
-};
-
 const renderAnswerAlarm = (message) => {
   if (document.getElementById("answerAlarm")) {
     document.getElementById("answerAlarm").remove();
@@ -73,7 +67,40 @@ const renderAnswerAlarm = (message) => {
   mainSection.append(alertSection);
 };
 
+const getFromLS = () => {
+  // check if we have anything in the LS
+  const highscores = localStorage.getItem("highscores");
+  if (highscores) {
+    // parse object in ls
+    return JSON.parse(highscores);
+  } else {
+    return [];
+  }
+};
+
+const storeHighscores = (event) => {
+  event.preventDefault();
+  // get the users name
+  const usersName = document.getElementById("full-name").value;
+  console.log(usersName);
+
+  const scoreObject = {
+    usersName: usersName,
+    usersScore: timer,
+  };
+
+  const highscores = getFromLS();
+  highscores.push(scoreObject);
+  localStorage.setItem("highscores", JSON.stringify(highscores));
+
+  renderThankYouBanner();
+};
+
 const renderThankYouBanner = () => {
+  // store users scores array in usersScore funciton
+
+  const gameoverSection = document.getElementById("feedback-form-section");
+  gameoverSection.remove();
   // // creat section element
   const thankyouSection = document.createElement("section");
   thankyouSection.setAttribute("class", "thankyou-section");
@@ -90,20 +117,18 @@ const renderThankYouBanner = () => {
   h2.textContent = "Do you want to take the quiz again?";
 
   // creat retry and go-to-high-scores button
-  const btn1 = document.createElement("button");
-  const btn2 = document.createElement("button");
+  const btn1 = document.createElement("a");
+  const btn2 = document.createElement("a");
   btn1.setAttribute("class", "retry-button");
   btn1.setAttribute("id", "retry-button");
+  btn1.setAttribute("href", "./index.html");
   btn1.textContent = "Retry";
   btn2.setAttribute("class", "showScores-button");
   btn2.setAttribute("id", "showScores-button");
+  btn2.setAttribute("href", "./highscores.html");
   btn2.textContent = "Go to the high Scores";
   thankyouSection.append(h1, h2, btn1, btn2);
   mainSection.append(thankyouSection);
-
-  // add click event listener on form submit button to render Thank you banner
-  // btn1.addEventListener("click", startQuiz);
-  // btn2.addEventListener("click", renderHighScores);
 };
 
 const renderGameOver = () => {
@@ -111,6 +136,7 @@ const renderGameOver = () => {
   const feedbackFormSection = document.createElement("section");
   feedbackFormSection.setAttribute("class", "feedback-form-section");
   feedbackFormSection.setAttribute("name", "feedback-form");
+  feedbackFormSection.setAttribute("id", "feedback-form-section");
 
   // create h2 title
   const h2 = document.createElement("h2");
@@ -132,6 +158,7 @@ const renderGameOver = () => {
   input.setAttribute("name", "full-name");
   input.setAttribute("class", "form-input");
   input.setAttribute("type", "text");
+  input.setAttribute("id", "full-name");
   input.setAttribute("placeholder", "Enter your full name");
   btn.setAttribute("class", "btn");
   btn.setAttribute("type", "submit");
@@ -141,7 +168,7 @@ const renderGameOver = () => {
   mainSection.append(feedbackFormSection);
 
   // add click event listener on form submit button to render Thank you banner
-  btn.addEventListener("click", renderThankYouBanner);
+  btn.addEventListener("click", storeHighscores);
 };
 
 const validateAnswer = (event) => {
@@ -151,13 +178,9 @@ const validateAnswer = (event) => {
     //get the target clicking event for user's answer
 
     const userAnswer = target.getAttribute("data-value");
-    console.log(userAnswer);
 
     // get the correct answer for each question
     const rightAnswer = questions[questionIndex].correctAnswer;
-    console.log(rightAnswer);
-
-    // store the users answer in an array
 
     //compare the 2 answers - correct(if),incorrect(else)
     if (userAnswer === rightAnswer) {
@@ -179,7 +202,6 @@ const validateAnswer = (event) => {
       renderQuestionSection();
     } else {
       // set quizComplete to true and then render form and stop the timer
-      questionIndex += 1;
       removeQuestionSection();
       renderGameOver();
     }
@@ -264,7 +286,7 @@ const renderTimerSection = () => {
       //render gameover
       clearInterval(timerId);
     }
-    if (questionIndex === questions.length) {
+    if (questionIndex === questions.length - 1) {
       clearInterval(timerId);
     }
   };
@@ -287,6 +309,6 @@ const startQuiz = () => {
 // add event listeners
 // add document on load event listener
 // add start button click event listener
-window.addEventListener("load", onLoad);
+// window.addEventListener("load", onLoad);
 // add event listener to start button
 startBtn.addEventListener("click", startQuiz);
