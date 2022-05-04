@@ -1,13 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
     <title>Code Quiz | High scores</title>
-</head>
-<body>
-    
+  </head>
+  <body>
+    <!-- same header as the home page -->
+    <header class="header">
+      <!-- my nav bar with two linked webpages -->
+      <nav class="nav-container">
+        <a href="./index.html" class="nav-link">Home </a>
+        <a href="./highscores.html" class="nav-link">Highscores</a>
+      </nav>
+    </header>
+    <main class="main" id="main">
+      <!-- my highscore leaderboard to render in JS  -->
+      <section class="highscores-section">
+        <h1>LEADERBOARCD - Final Ranking</h1>
+        <p>Check out your score!</p>
+        <div class="table-container">
+          <table class="score-table">
+            <tr class="table">
+              <th class="table-title">RANK</th>
+              <th class="table-title">NAME</th>
+              <th class="table-title">SCORE</th>
+            </tr>
+            <tr>
+              <td class="table-info">1</td>
+              <td class="table-info">blandfish</td>
+              <td class="table-info">50</td>
+            </tr>
+          </table>
+        </div>
+      </section>
+    </main>
     <script src="./assets/js/highscores.js"></script>
-</body>
+  </body>
 </html>
