@@ -1,10 +1,10 @@
 const mainSection = document.getElementById("main");
 const startContainer = document.getElementById("banner");
 const startBtn = document.getElementById("startBtn");
-// const mainElement = document.getElementById("main");
 
 let timer = 100;
 let questionIndex = 0;
+
 // declear my questions and answers array
 const questions = [
   {
@@ -312,3 +312,22 @@ const startQuiz = () => {
 // window.addEventListener("load", onLoad);
 // add event listener to start button
 startBtn.addEventListener("click", startQuiz);
+
+// uncompleted functions??
+const onLoad = () => {
+  // initialise local storage
+  // check if highscores exists in LS
+  // if false then set highscores to empty array in LS
+};
+
+const handleFormSubmit = () => {
+  // get value from input
+  // check if empty then render error alert with message and status
+  // if not empty then create the score object
+  // {
+  //   fullName: "Bob Smith",
+  //   score: 25
+  // }
+  // push score object to LS
+  // render quizCompleteSection
+};

@@ -48,33 +48,6 @@ main {
   padding: 1rem 2rem 1rem 2rem;
 }
 
-/* my welcome banner section */
-.welcome-section {
-  border: 0.3rem solid black;
-  box-shadow: 0rem 0rem 0.7rem 0.7rem var(--header-and-footer-background);
-  letter-spacing: 0.3rem;
-  padding: 2rem 1rem;
-  text-align: center;
-}
-
-.welcome-section-title {
-}
-
-.welcome-section-info {
-}
-
-.start-button {
-}
-
-/* my question banner section */
-.question-section {
-  border: 0.3rem solid black;
-  box-shadow: 0rem 0rem 0.7rem 0.7rem var(--header-and-footer-background);
-  letter-spacing: 0.3rem;
-  padding: 2rem 1rem;
-  text-align: center;
-}
-
 .answer-button {
   width: 100%;
 }
@@ -84,8 +57,11 @@ main {
   padding: 0;
 }
 
-/* my form section */
-.feedback-form-section {
+/* my section control */
+.feedback-form-section,
+.thankyou-section,
+.question-section,
+.welcome-section {
   border: 0.3rem solid black;
   box-shadow: 0rem 0rem 0.7rem 0.7rem var(--header-and-footer-background);
   letter-spacing: 0.3rem;
@@ -93,16 +69,10 @@ main {
   text-align: center;
 }
 
-.thankyou-section {
-  border: 0.3rem solid black;
-  box-shadow: 0rem 0rem 0.7rem 0.7rem var(--header-and-footer-background);
-  letter-spacing: 0.3rem;
-  padding: 2rem 1rem;
-  text-align: center;
-}
-
-/* my gameover section */
-.retry-button {
+/* mt button control */
+.retry-button,
+.home-button,
+.showScores-button {
   text-decoration: none;
   width: 115px;
   height: 25px;
@@ -116,19 +86,6 @@ main {
   margin-right: 3rem;
 }
 
-.showScores-button {
-  text-decoration: none;
-  width: 115px;
-  height: 25px;
-  background: var(--header-and-footer-background);
-  padding: 10px;
-  text-align: center;
-  border-radius: 5px;
-  color: white;
-  font-weight: bold;
-  line-height: 25px;
-}
-
 /* my highscore page */
 .highscores-section {
   border: 0.3rem solid black;
@@ -139,12 +96,14 @@ main {
 }
 
 /* handle table style */
+.table-container {
+  margin: 2rem;
+}
 table,
 th,
 td {
   border: 1px solid black;
 }
-
 .table-container {
   display: flex;
   justify-content: center;
