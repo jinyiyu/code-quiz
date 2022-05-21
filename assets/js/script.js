@@ -1,6 +1,7 @@
 const mainSection = document.getElementById("main");
 const startContainer = document.getElementById("banner");
 const startBtn = document.getElementById("startBtn");
+const alertSection = document.getElementById("massage");
 
 let timer = 100;
 let questionIndex = 0;
@@ -57,14 +58,14 @@ const questions = [
 ];
 
 const renderAnswerAlarm = (message) => {
-  if (document.getElementById("answerAlarm")) {
-    document.getElementById("answerAlarm").remove();
-  }
-  const alertSection = document.createElement("section");
-  alertSection.setAttribute("class", "correctAnswerAlarm");
-  alertSection.setAttribute("id", "answerAlarm");
+  // if (document.getElementById("answerAlarm")) {
+  //   document.getElementById("answerAlarm").remove();
+  // }
+  // const alertSection = document.createElement("section");
+  // alertSection.setAttribute("class", "correctAnswerAlarm");
+  // alertSection.setAttribute("id", "answerAlarm");
   alertSection.textContent = message;
-  mainSection.append(alertSection);
+  // mainSection.append(alertSection);
 };
 
 const getFromLS = () => {
@@ -206,9 +207,10 @@ const validateAnswer = (event) => {
       renderGameOver();
     }
     const clearAlarm = () => {
-      if (document.getElementById("answerAlarm")) {
-        document.getElementById("answerAlarm").remove();
-      }
+      // if (document.getElementById("answerAlarm")) {
+      //   document.getElementById("answerAlarm").remove();
+      // }
+      alertSection.textContent = "";
       clearTimeout(alarmTimer);
     };
 
