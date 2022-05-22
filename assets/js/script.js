@@ -1,7 +1,7 @@
 const mainSection = document.getElementById("main");
 const startContainer = document.getElementById("banner");
 const startBtn = document.getElementById("startBtn");
-const alertSection = document.getElementById("massage");
+const alertSection = document.getElementById("message");
 
 let timer = 100;
 let questionIndex = 0;
@@ -143,12 +143,12 @@ const renderGameOver = () => {
   // create h2 title
   const h2 = document.createElement("h2");
   h2.setAttribute("class", "feedback-form-title");
-  h2.textContent = "Good job!";
+  h2.textContent = "let's save your score!";
 
   // creat h3 info
   const h3 = document.createElement("h3");
   h3.setAttribute("class", "feedback-form-info");
-  h3.textContent = "let's save your score!";
+  // h3.textContent = `Your score is: ${getFromLS().usersScore}`;
 
   // creat form info
   const form = document.createElement("form");
@@ -184,7 +184,7 @@ const validateAnswer = (event) => {
     // get the correct answer for each question
     const rightAnswer = questions[questionIndex].correctAnswer;
 
-    //compare the 2 answers - correct(if),incorrect(else)
+    //compare the 2 answers and render message
     if (userAnswer === rightAnswer) {
       // render success alert with message and status
       renderAnswerAlarm("You're correct! Keep going!");
@@ -215,7 +215,7 @@ const validateAnswer = (event) => {
       clearTimeout(alarmTimer);
     };
 
-    const alarmTimer = setTimeout(clearAlarm, 1500);
+    const alarmTimer = setTimeout(clearAlarm, 5000);
   }
 };
 
@@ -274,7 +274,8 @@ const renderQuestionSection = () => {
 const renderTimerSection = () => {
   const timerSpanSection = document.createElement("section");
   timerSpanSection.setAttribute("id", "timerSpanSection");
-  timerSpanSection.textContent = "Timer: ";
+  timerSpanSection.setAttribute("class", "timerSpanSection");
+  timerSpanSection.textContent = "Time Remaining: ";
   const timerSpan = document.createElement("span");
   timerSpan.setAttribute("id", "timerSpan");
   timerSpan.textContent = timer;
