@@ -31,29 +31,30 @@ const questions = [
     correctAnswer: "Spain",
   },
   {
-    question: "what would you like to eat?",
-    answers: ["chicken", "cake", "drink", "anything"],
-    correctAnswer: "chicken",
+    question: "What is the term for a group of owls?",
+    answers: ["Blessing", "Terror", "Confusion", "Parliament"],
+    correctAnswer: "Parliament",
   },
   {
-    question: "what would you like to eat?",
-    answers: ["chicken", "cake", "drink", "anything"],
-    correctAnswer: "chicken",
+    question: "The average person in the US opens what 13 times per day?",
+    answers: ["Front door", "A can of soda", "Refrigerator", "A window"],
+    correctAnswer: "Refrigerator",
   },
   {
-    question: "what would you like to eat?",
-    answers: ["chicken", "cake", "drink", "anything"],
-    correctAnswer: "chicken",
+    question: "What is the length of New Zealand's 90 Mile Beach?",
+    answers: ["90 miles", "77 miles", "90 km", "55 miles"],
+    correctAnswer: "55 miles",
   },
   {
-    question: "what would you like to eat?",
-    answers: ["chicken", "cake", "drink", "anything"],
-    correctAnswer: "chicken",
+    question: "What are you afriad of if you are Syngenesophobic?",
+    answers: ["Syringes", "Genetically modified crops", "Relatives", "Snakes"],
+    correctAnswer: "Relatives",
   },
   {
-    question: "what would you like to eat?",
-    answers: ["chicken", "cake", "drink", "anything"],
-    correctAnswer: "chicken",
+    question:
+      "In the Harry Potter book and film series, Professor Dumbledore's name comes from the Old English word for what creature?",
+    answers: ["Bumblebee", "Elephant", "Owl", "Unicorn"],
+    correctAnswer: "Bumblebee",
   },
 ];
 
@@ -142,12 +143,12 @@ const renderGameOver = () => {
   // create h2 title
   const h2 = document.createElement("h2");
   h2.setAttribute("class", "feedback-form-title");
-  h2.textContent = "let's save your score!";
+  h2.textContent = "Good job!";
 
   // creat h3 info
   const h3 = document.createElement("h3");
   h3.setAttribute("class", "feedback-form-info");
-  h3.textContent = "Your score is:100";
+  h3.textContent = "let's save your score!";
 
   // creat form info
   const form = document.createElement("form");
