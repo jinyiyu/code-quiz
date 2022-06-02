@@ -38,7 +38,7 @@ const creatTable = () => {
   let data = getFromLS();
   console.log(data);
   data = data.sort((a, b) => b.usersScore - a.usersScore);
-  data = data.slice(0, 7);
+  data = data.slice(0, 6);
 
   const renderScore = (score, index) => {
     // create tr element

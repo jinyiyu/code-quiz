@@ -14,6 +14,9 @@
 
 html {
   font-size: 10px;
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 body {
@@ -29,7 +32,6 @@ body {
 main {
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
   align-items: center;
   /* flex: 2; */
 }
@@ -64,8 +66,7 @@ main {
 .thankyou-section,
 .question-section,
 .welcome-section,
-.question-section,
-.highscores-section {
+.question-section {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -107,21 +108,26 @@ main {
 }
 
 /* mt button control */
+
+.btnContainer {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 12rem;
+}
 .retry-button,
-.home-button,
 .showScores-button {
   text-decoration: none;
-  width: 115px;
-  height: 25px;
+  width: 27rem;
+  height: 5rem;
   background: var(--header-and-footer-background);
   padding: 10px;
   text-align: center;
   border-radius: 5px;
-  color: white;
+  color: rgb(64, 63, 63);
+  font-size: 1.8rem;
   font-weight: bold;
-  line-height: 25px;
-  margin-right: 3rem;
 }
+
 .answer-button,
 #startBtn,
 .btn {
@@ -139,17 +145,26 @@ main {
 
 /* my highscore page */
 .highscores-section {
-  border: 0.3rem solid black;
-  box-shadow: 0rem 0rem 0.7rem 0.7rem var(--header-and-footer-background);
-  letter-spacing: 0.3rem;
-  padding: 2rem 1rem;
+  margin-top: 10rem;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: first baseline; */
+  align-items: center;
+}
+.home-button {
+  text-decoration: none;
+  width: 23rem;
+  background: var(--header-and-footer-background);
+  padding: 10px;
   text-align: center;
+  border-radius: 5px;
+  color: rgb(64, 63, 63);
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-top: 5rem;
 }
-
 /* handle table style */
-.table-container {
-  margin: 2rem;
-}
+
 table,
 th,
 td {
@@ -161,8 +176,75 @@ td {
 }
 .table {
   background-color: rgb(184, 182, 184);
+  /* color: #d64639; */
 }
 .table-info,
 .table-title {
   padding: 1rem 1rem;
+  background-color: rgb(184, 182, 184);
+  /* color: #d64639; */
+}
+
+@media (max-width: 690px) {
+  .message {
+    position: absolute;
+    color: #d64639;
+    margin-top: 13rem;
+    margin-left: 2rem;
+    font-size: 1.6rem;
+    font-weight: 500;
+  }
+  .timerSpanSection {
+    font-size: medium;
+  }
+  .showScores-button {
+    width: 17rem;
+    height: 5rem;
+    background: var(--header-and-footer-background);
+    text-align: center;
+    border-radius: 10px;
+    color: rgb(64, 63, 63);
+    font-size: 1.8rem;
+    font-weight: bold;
+  }
+  .retry-button {
+    text-decoration: none;
+    width: 10rem;
+    height: 5rem;
+    background: var(--header-and-footer-background);
+    text-align: center;
+    border-radius: 10px;
+    color: rgb(64, 63, 63);
+    font-size: 1.8rem;
+    font-weight: bold;
+  }
+}
+
+@media (max-width: 500px) {
+  .feedback-form-section,
+  .thankyou-section,
+  .question-section,
+  .welcome-section,
+  .question-section {
+    height: 40rem;
+  }
+  html {
+    font-size: 10px;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  .highscores-section {
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .timerSpanSection {
+    position: absolute;
+    margin-top: 16rem;
+    margin-left: -1%;
+    font-size: 15px;
+    font-weight: 500;
+  }
 }

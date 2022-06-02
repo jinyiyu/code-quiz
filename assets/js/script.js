@@ -2,6 +2,7 @@ const mainSection = document.getElementById("main");
 const startContainer = document.getElementById("banner");
 const startBtn = document.getElementById("startBtn");
 const alertSection = document.getElementById("message");
+const timerSpan = document.getElementById("timerSpan");
 
 let timer = 100;
 let questionIndex = 0;
@@ -119,6 +120,8 @@ const renderThankYouBanner = () => {
   h2.textContent = "Do you want to take the quiz again?";
 
   // creat retry and go-to-high-scores button
+  const div = document.createElement("div");
+  div.setAttribute("class", "btnContainer");
   const btn1 = document.createElement("a");
   const btn2 = document.createElement("a");
   btn1.setAttribute("class", "retry-button");
@@ -128,8 +131,9 @@ const renderThankYouBanner = () => {
   btn2.setAttribute("class", "showScores-button");
   btn2.setAttribute("id", "showScores-button");
   btn2.setAttribute("href", "./highscores.html");
-  btn2.textContent = "Go to the high Scores";
-  thankyouSection.append(h1, h2, btn1, btn2);
+  btn2.textContent = "High Scores";
+  div.append(btn1, btn2);
+  thankyouSection.append(h1, h2, div);
   mainSection.append(thankyouSection);
 };
 
@@ -284,7 +288,7 @@ const renderTimerSection = () => {
 
   const startTimer = () => {
     timer -= 1;
-    const timerSpan = document.getElementById("timerSpan");
+
     timerSpan.textContent = timer;
     if (timer === 0) {
       //render gameover
@@ -316,22 +320,3 @@ const startQuiz = () => {
 // window.addEventListener("load", onLoad);
 // add event listener to start button
 startBtn.addEventListener("click", startQuiz);
-
-// uncompleted functions??
-const onLoad = () => {
-  // initialise local storage
-  // check if highscores exists in LS
-  // if false then set highscores to empty array in LS
-};
-
-const handleFormSubmit = () => {
-  // get value from input
-  // check if empty then render error alert with message and status
-  // if not empty then create the score object
-  // {
-  //   fullName: "Bob Smith",
-  //   score: 25
-  // }
-  // push score object to LS
-  // render quizCompleteSection
-};
