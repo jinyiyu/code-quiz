@@ -1,6 +1,4 @@
-# Code Quiz
-
-
+# Random Funny Quiz
 
 ## About this Project
 
@@ -29,6 +27,7 @@ SO THAT I can create a strong password that provides greater security
 <br>
 
 ### Logic diagrams
+
 <br>
 
 Overall logic
@@ -38,16 +37,19 @@ description and put my overall diagrams here
 <br>
 
 At function level
+
 <details>
 <summary> 1. function two - </summary>
 
 ![display](./assets/image/display-start.png)
+
 </details>
 
 <details>
 <summary> 2. function three - rander something</summary>
 
 ![display](./assets/image/display-start.png)
+
 </details>
 
 <br>
@@ -60,18 +62,21 @@ The following screenshots in the taggle list show the web application's appearan
 <summary> Welcome banner Page</summary>
 
 ![display](./assets/image/display-start.png)
+
 </details>
 
 <details>
 <summary> Start Take the questions with a timeer</summary>
 
 ![display2](./assets/image/password-length.png)
+
 </details>
 
 <details>
 <summary> Complete the last question</summary>
 
 ![display2](./assets/image/alert-length.png)
+
 </details>
 
 <details>
@@ -81,12 +86,14 @@ The following screenshots in the taggle list show the web application's appearan
 ![display2](./assets/image/password-characters2.png)
 ![display2](./assets/image/password-characters3.png)
 ![display2](./assets/image/password-characters4.png)
+
 </details>
 
 <details>
 <summary> Change to highscrose page to compare with other player</summary>
 
 ![display2](./assets/image/alert-characters.png)
+
 </details>
 
 <br>
@@ -112,4 +119,4 @@ The following screenshots in the taggle list show the web application's appearan
 
 ## Authored by
 
-### __Jinyi Yu__
+### **Jinyi Yu**
