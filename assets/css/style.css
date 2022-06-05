@@ -1,0 +1,250 @@
+:root {
+  --header-and-footer-background: rgb(245, 182, 192);
+  --body-background: rgb(217, 210, 210);
+  --formBackground: #ffafcc;
+  --pink-lavender: #cdb4dbff;
+  --orchid-pink: #ffc8ddff;
+  --uranian-blue: #bde0feff;
+  --baby-blue-eyes: #a2d2ffff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  line-height: 2;
+  margin: 0;
+  background-color: var(--body-background);
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* flex: 2; */
+}
+
+/* my header with nav bar sticked on top */
+.header {
+  background-color: var(--header-and-footer-background);
+}
+
+.nav-container {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.nav-link {
+  text-decoration: none;
+  font-size: 2rem;
+  padding: 1rem 2rem 1rem 2rem;
+}
+
+.answer-button {
+  width: 100%;
+}
+
+.answers {
+  list-style: none;
+  padding: 0;
+}
+
+/* my sections control */
+.feedback-form-section,
+.thankyou-section,
+.question-section,
+.welcome-section,
+.question-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 0.3rem solid black;
+  box-shadow: 0rem 0rem 0.7rem 0.7rem var(--header-and-footer-background);
+  letter-spacing: 0.15rem;
+  padding: 2rem 2rem;
+  text-align: center;
+  width: 90%;
+  margin: 20rem;
+  height: 50rem;
+}
+.message {
+  position: absolute;
+  color: #d64639;
+  margin-top: 15rem;
+  margin-left: 40rem;
+  font-size: 2rem;
+  font-weight: 700;
+}
+.timerSpanSection {
+  position: absolute;
+  margin-top: 15rem;
+  margin-left: -65%;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.form-input {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 2px solid rgb(66, 35, 35);
+  border-radius: 4px;
+}
+.form-input:focus {
+  background-color: var(--orchid-pink);
+}
+
+/* mt button control */
+
+.btnContainer {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 12rem;
+}
+.retry-button,
+.showScores-button {
+  text-decoration: none;
+  width: 27rem;
+  height: 5rem;
+  background: var(--header-and-footer-background);
+  padding: 10px;
+  text-align: center;
+  border-radius: 5px;
+  color: rgb(64, 63, 63);
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.answer-button,
+#startBtn,
+.btn {
+  text-decoration: none;
+  background: var(--header-and-footer-background);
+  padding: 10px;
+  text-align: center;
+  border-radius: 20px;
+  margin: 3px;
+  color: white;
+  font-size: medium;
+  font-weight: 700;
+  line-height: 20px;
+}
+
+/* my highscore page */
+.highscores-section {
+  margin-top: 10rem;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: first baseline; */
+  align-items: center;
+}
+.home-button {
+  text-decoration: none;
+  width: 23rem;
+  background: var(--header-and-footer-background);
+  padding: 10px;
+  text-align: center;
+  border-radius: 5px;
+  color: rgb(64, 63, 63);
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-top: 5rem;
+}
+/* handle table style */
+
+table,
+th,
+td {
+  border: 1px solid black;
+}
+.table-container {
+  display: flex;
+  justify-content: center;
+}
+.table {
+  background-color: rgb(184, 182, 184);
+  /* color: #d64639; */
+}
+.table-info,
+.table-title {
+  padding: 1rem 1rem;
+  background-color: rgb(184, 182, 184);
+  /* color: #d64639; */
+}
+
+@media (max-width: 690px) {
+  .message {
+    position: absolute;
+    color: #d64639;
+    margin-top: 13rem;
+    margin-left: 2rem;
+    font-size: 1.6rem;
+    font-weight: 500;
+  }
+  .timerSpanSection {
+    font-size: medium;
+  }
+  .showScores-button {
+    width: 17rem;
+    height: 5rem;
+    background: var(--header-and-footer-background);
+    text-align: center;
+    border-radius: 10px;
+    color: rgb(64, 63, 63);
+    font-size: 1.8rem;
+    font-weight: bold;
+  }
+  .retry-button {
+    text-decoration: none;
+    width: 10rem;
+    height: 5rem;
+    background: var(--header-and-footer-background);
+    text-align: center;
+    border-radius: 10px;
+    color: rgb(64, 63, 63);
+    font-size: 1.8rem;
+    font-weight: bold;
+  }
+}
+
+@media (max-width: 500px) {
+  .feedback-form-section,
+  .thankyou-section,
+  .question-section,
+  .welcome-section,
+  .question-section {
+    height: 40rem;
+  }
+  html {
+    font-size: 10px;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  .highscores-section {
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .timerSpanSection {
+    position: absolute;
+    margin-top: 16rem;
+    margin-left: -1%;
+    font-size: 15px;
+    font-weight: 500;
+  }
+}
