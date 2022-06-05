@@ -107,15 +107,16 @@ The following screenshots in the taggle list show the web application's appearan
 - Web APIs
 - Github
 
-<br>
+<br />
 
 ## How To Contact Me
 
-- Email: yujinyiicxk@gmail.com
-- Github: https://github.com/jinyiyu
-- LinkedIn: https://www.linkedin.com/in/jinyiyu/
+Please contact me if you have any inquiries
 
-<br>
+[<img height="26" width="26" src="https://raw.githubusercontent.com/jinyiyu/jinyiyu/main/icon/github.svg" />](https://github.com/jinyiyu)
+[<img height="26" width="26" src="https://raw.githubusercontent.com/jinyiyu/jinyiyu/main/icon/linkedIn.svg" />](https://www.linkedin.com/in/jinyiyu/)
+[<img height="26" width="26" src="https://raw.githubusercontent.com/jinyiyu/jinyiyu/main/icon/instagram.svg" />](https://www.instagram.com/jinyiyu517/)
+[<img height="26" width="26" src="https://raw.githubusercontent.com/jinyiyu/jinyiyu/main/icon/gmail.svg" />](mailto:yujinyiicxk@gmail.com)
 
 ## Authored by
 
