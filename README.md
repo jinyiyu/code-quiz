@@ -3,56 +3,36 @@
 ## About this Project
 
 ```
-This project is developed to emable users to generate random passwords based on criteria that they’ve selected. This app will run in the browser and will feature dynamically updated HTML and CSS powered by JavaScript code. It will have a clean and polished, responsive user interface that adapts to multiple screen sizes.
+This project is developed to emable users to have some fun taking sets of random questions. Users will be presented with a few multiple choice questions and will be offered access to their scores. The quiz has a countdown feature and the score is the remaining timer value at the end of the quiz.
+This quiz project is focussing on using DOM, Javascript and localStorage。Highly recommended to first-timers who are trying to learn those concepts.
 ```
 
 ## Links to the Project
 
-Link to the Github Repository: [https://github.com/jinyiyu/code-quiz]
+Check out the Github Repository [Here](https://github.com/jinyiyu/code-quiz)
 
-Link to the deployed URL: [https://jinyiyu.github.io/code-quiz/]
+Check out the deployed URL [Here](https://jinyiyu.github.io/code-quiz/)
 
 <br>
 
 ## User Story
 
 ```
-AS AN employee with access to sensitive data
-I WANT to randomly generate a password that meets certain criteria
-SO THAT I can create a strong password that provides greater security
+I WANT to take a timed quiz on JavaScript fundamentals that stores high scores
+SO THAT I can gauge my progress compared to my peers
+
+GIVEN I am taking a randon quiz
+WHEN I click the start button
+THEN a timer starts and I am presented with a question
+WHEN I answer a question
+THEN I am presented with another question
+WHEN I answer a question incorrectly
+THEN time is subtracted from the clock
+WHEN all questions are answered or the timer reaches 0
+THEN the game is over
+WHEN the game is over
+THEN I can save my initials and my score
 ```
-
-## Details of the steps in flowcharts
-
-<br>
-
-### Logic diagrams
-
-<br>
-
-Overall logic
-
-description and put my overall diagrams here
-
-<br>
-
-At function level
-
-<details>
-<summary> 1. function two - </summary>
-
-![display](./assets/image/display-start.png)
-
-</details>
-
-<details>
-<summary> 2. function three - rander something</summary>
-
-![display](./assets/image/display-start.png)
-
-</details>
-
-<br>
 
 ## Mock-Up
 
@@ -61,38 +41,28 @@ The following screenshots in the taggle list show the web application's appearan
 <details>
 <summary> Welcome banner Page</summary>
 
-![display](./assets/image/display-start.png)
+![display](./assets/image/welcome-section.png)
 
 </details>
 
 <details>
-<summary> Start Take the questions with a timeer</summary>
+<summary> Start Take the questions with a timer</summary>
 
-![display2](./assets/image/password-length.png)
-
-</details>
-
-<details>
-<summary> Complete the last question</summary>
-
-![display2](./assets/image/alert-length.png)
+![display2](./assets/image/questions.png)
 
 </details>
 
 <details>
-<summary> Display the result</summary>
+<summary> End the quiz</summary>
 
-![display2](./assets/image/password-characters1.png)
-![display2](./assets/image/password-characters2.png)
-![display2](./assets/image/password-characters3.png)
-![display2](./assets/image/password-characters4.png)
+![display2](./assets/image/thank-you-section.png)
 
 </details>
 
 <details>
-<summary> Change to highscrose page to compare with other player</summary>
+<summary> Go to highscrose page to compare with other player</summary>
 
-![display2](./assets/image/alert-characters.png)
+![display2](./assets/image/high-scores.png)
 
 </details>
 
@@ -104,7 +74,6 @@ The following screenshots in the taggle list show the web application's appearan
 - CSS
 - Javascript
 - Bootstrap
-- Web APIs
 - Github
 
 <br />
