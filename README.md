@@ -3,7 +3,7 @@
 ## About this Project
 
 ```
-This project is developed to emable users to have some fun taking sets of random questions. Users will be presented with a few multiple choice questions and will be offered access to their scores. The quiz has a countdown feature and the score is the remaining timer value at the end of the quiz..
+This project is developed to emable users to have some fun taking sets of random questions. Users will be presented with a few multiple choice questions and will be offered access to their scores. The quiz has a countdown feature and the score is the remaining timer value at the end of the quiz.
 This quiz project is focussing on using DOM, Javascript and localStorage。Highly recommended to first-timers who are trying to learn those concepts.
 ```
 
